@@ -36,7 +36,7 @@ function sumN(A, n, m) {
  * @param {*} n 组合数字个数
  * @param {*} m 总和
  * @param {*} i 递增决策树
- * @param {*} decisions 返回正确的数组结果
+ * @param {*} decisions 返回匹配的数组结果
  * @returns
  */
 function sumN2(A, n, m, i = 0, decisions = []) {

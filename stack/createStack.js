@@ -5,7 +5,7 @@ class Stack {
     this.size = 0;
     this.data = Array(max);
   }
-  push() {
+  push(item) {
     if (this.sp === this.max - 1) throw "Stack Overflow";
     this.data[++this.sp] = item;
     this.size++;
@@ -16,4 +16,11 @@ class Stack {
     this.size--;
     return item;
   }
+  isEmpty() {
+    return this.size <= 0;
+  }
 }
+
+module.exports = {
+  Stack,
+};

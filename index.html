@@ -10,7 +10,29 @@
 
 <body>
     <canvas id="myCanvas" width="400px" height="400px">如果浏览器不支持canvas，则会显示这里的细腻些</canvas>
-    <script type="module" src="./parse/queryString.js"></script>
+    <!-- <script type="module" src="./parse/queryString.js"></script> -->
+    <script type="module">
+        const getId = function (id) {
+            return document.getElementById(id)
+        }
+        console.log(getId('myCanvas'))
+        document.getElementById = (function (func) {
+            return function () {
+                return func.apply(document, arguments)
+            }
+        })(document.getElementById)
+        const getId2 = document.getElementById
+        console.log(getId2('myCanvas'))
+        const a = {}
+        Array.prototype.push.call(a, 'first')
+        console.log(a.length, a[0], a)
+        Function.prototype.apply = function (obj, args) {
+            const ctx = Symbol(this)
+            return function () {
+
+            }
+        }
+    </script>
 </body>
 
 </html>
